@@ -1,3 +1,5 @@
+all:
+
 graph:
 	g++ LinkedList.cpp Graph.cpp main-graph.cpp -o ./output
 	./output
