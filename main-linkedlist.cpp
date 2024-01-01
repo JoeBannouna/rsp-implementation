@@ -5,6 +5,8 @@
 using std::cout;
 using std::endl;
 
+bool compare(int item1, int item2) { return item1 > item2; }
+
 int main() {
   LinkedList* test = new LinkedList();
   test->printList();
@@ -21,8 +23,8 @@ int main() {
   LinkedList* element;
 
   element = test->search(10);
-  cout << (element == NULL ? "Element '10' not found" : "Element '10' found") << endl;
-  
-  element = test->search(11);
-  cout << (element == NULL ? "Element '11' not found" : "Element '11' found") << endl;
+  cout << "Element " << (element == NULL ? "not" : std::to_string(element->getItem())) << " found" << endl;
+
+  element = test->search(13, compare);
+  cout << "Element " << (element == NULL ? "not" : std::to_string(element->getItem())) << " found" << endl;
 }
