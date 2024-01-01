@@ -82,8 +82,10 @@ bool LinkedList::del(int item) {
     LinkedList* temp = list_ahead->next;
     // Link the linkedList that appears before the to-be-deleted linkedlist
     // to the one that appears after
-    if (list_ahead->next->next != NULL) list_ahead->next = list_ahead->next->next;
-    else list_ahead->next = NULL;
+    if (list_ahead->next->next != NULL)
+      list_ahead->next = list_ahead->next->next;
+    else
+      list_ahead->next = NULL;
     // Free the to-be-deleted list from memory
     delete temp;
 
@@ -95,7 +97,7 @@ bool LinkedList::del(int item) {
 
 void LinkedList::printList() {
   LinkedList* curr = this->next;
-  // curr = curr->next;
+
   cout << "{";
   if (curr != NULL) {
     cout << curr->item;
@@ -108,4 +110,21 @@ void LinkedList::printList() {
   }
 
   cout << "}" << endl;
+}
+
+int LinkedList::length() {
+  int i = 0;
+  LinkedList* curr;
+  
+  while (curr != NULL) {
+    curr = curr->next;
+    i++;
+  }
+
+  return i;
+}
+
+LinkedList* LinkedList::getNext() {
+  // cout << (this->next == NULL) << endl;
+  return this->next;
 }

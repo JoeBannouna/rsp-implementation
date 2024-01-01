@@ -1,5 +1,5 @@
 graph:
-	g++ Graph.cpp main-graph.cpp -o ./output
+	g++ LinkedList.cpp Graph.cpp main-graph.cpp -o ./output
 	./output
 
 binarytree:

@@ -1,3 +1,5 @@
+#pragma once
+
 #include <iostream>
 
 using std::cout;
@@ -30,4 +32,8 @@ class LinkedList {
 
   int getItem();
   void printList();
+
+  int length();
+  
+  LinkedList* getNext();
 };
